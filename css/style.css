@@ -178,15 +178,21 @@ header nav li a:hover {
   }
 
   /* 閉じるアイコンの実装 */
+  #hamburger-input:checked ~ label {
+    transform: rotate(360deg); /* アイコン全体を回転させる */
+  }
+
   #hamburger-input:checked ~ label span:nth-of-type(1) {
     transform: translateY(11px) rotate(-45deg);
   }
 
   #hamburger-input:checked ~ label span:nth-of-type(2) {
-    opacity: 0;
+    transform: translateY(0px) rotate(45deg);
   }
 
   #hamburger-input:checked ~ label span:nth-of-type(3) {
-    transform: translateY(-11px) rotate(45deg);
+    opacity: 0;
   }
+
+  /* ドロワーメニューの実装 */
 }
