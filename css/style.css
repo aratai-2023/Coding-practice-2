@@ -15,7 +15,6 @@ body {
   color: #333;
   line-height: 2.0;
   letter-spacing: 0.1em;
-  background-color: #333; /* 臨時 */
 }
 
 *, *::before, *::after {
@@ -86,7 +85,7 @@ section h2 {
 .header h1 {
   margin: 0 0 0 25px;
   font-size: 2.5rem;
-  color: #fff;
+  color: #ffbf1f;
 }
 
 .header nav ul {
@@ -106,7 +105,7 @@ section h2 {
 }
 
 header nav li a {
-  color: #fff;
+  color: #ffbf1f;
 }
 
 header nav li a:hover {
@@ -116,10 +115,14 @@ header nav li a:hover {
 .header nav li.phone {
   margin: 0 30px 0 10px;
   padding: 0 25px;
-  border: 1px solid #fff;
+  border: 1px solid #ffbf1f;
   line-height: 50px;
   display: block;
-  color: #fff;
+  color: #ffbf1f;
+}
+
+.hamburger-unshown {
+  display: none; /* checkboxは非表示に */
 }
 
 @media screen and (max-width: 1199px) {
@@ -160,7 +163,7 @@ header nav li a:hover {
     left: 0;
     width: 100%; /* 線の幅 */
     height: 4px; /* 線の太さ */
-    background-color: #fff;
+    background-color: #ffbf1f;
     border-radius: 5px;
     cursor: pointer;
   }
@@ -195,4 +198,467 @@ header nav li a:hover {
   }
 
   /* ドロワーメニューの実装 */
+}
+
+@media screen and (max-width: 846px) {
+  .header h1 {
+    font-size: 5vw;
+  }
+}
+
+/* ======= mainvisual ======= */
+
+.mainvisual {
+  position: relative;
+}
+
+.mainvisual img {
+  height: 900px;
+  object-fit: cover;
+  object-position: 0 75%;
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
+}
+
+.mainvisual h2 {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  z-index: 1;
+  font-size: 5vw;
+  color: #ffbf1f;
+}
+
+@media screen and (max-width: 1199px) {
+  .mainvisual img {
+    height: auto;
+  }
+}
+
+/* ======= topics ======= */
+
+.topics {
+  padding: 120px;
+}
+
+.topics .content-wrapper {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.topics .heading {
+  width: 35%;
+}
+
+.topics .content {
+  width: 65%;
+}
+
+.topics .content table {
+  width: 100%;
+  margin: 0 0 25px 0;
+}
+
+.topics .content th {
+  padding: 20px 2em 20px 0;
+  border-bottom: 1px dotted;
+}
+
+.topics .content td {
+  border-bottom: 1px dotted;
+}
+
+.topics .content tr:last-of-type th,
+.topics .content tr:last-of-type td {
+  border-bottom: none;
+}
+
+.topics .content .btn {
+  margin: 0;
+}
+
+.topics .content .btn a {
+  display: block;
+  font-size: 0.8em;
+  color: #000;
+  border: 1px solid #000;
+  width: 200px;
+  line-height: 60px;
+  text-align: center;
+  margin: 0 0 0 auto;
+}
+
+.topics .content .btn a:hover {
+  background: #333;
+  color: #fff;
+}
+
+@media screen and (max-width: 1199px) {
+  .topics {
+    padding: 50px 5vw;
+  }
+
+  .topics .content-wrapper {
+    display: block;
+  }
+
+  .topics .heading {
+    width: 100%;
+  }
+
+  .topics .heading h2 {
+    text-align: center;
+    margin-bottom: 5vw;
+  }
+
+  .topics .content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .topics {
+    padding: 50px 0;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .topics .content .btn a {
+    width: 35%;
+    min-width: 200px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .topics .content th {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 1.25em 0 0 0;
+    border-bottom: 0;
+  }
+
+  .topics .content td {
+    display: block;
+    width: 100%;
+  }
+}
+
+/* ======= institution ======= */
+
+.institution {
+  background: url(../images/institution.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 500px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.institution::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: rgba(248, 3, 207, 0.3);
+}
+
+.institution .content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.institution h2 {
+  color: #fff;
+  text-align: left;
+}
+
+.institution p {
+  color: #fff;
+  text-align: left;
+  margin-bottom: 70px;
+}
+
+.institution p.btn {
+  margin: 0;
+}
+
+.institution p.btn a {
+  color: #fff;
+  display: block;
+  font-size: 0.875em;
+  border: 1px solid #fff;
+  width: 200px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.institution p.btn a:hover {
+  background: #fff;
+  color: #333;
+}
+
+@media screen and (max-width: 479px) {
+  .institution .content {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .institution h2, p {
+    text-align: center;
+  }
+
+  .institution p.btn a {
+    width: 30%;
+    min-width: 200px;
+    margin: 0 auto;
+  }
+}
+
+/* ======= recruit ======= */
+
+.recruit {
+  padding: 10% 0;
+  position: relative;
+}
+
+.recruit h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 3vh;
+}
+
+.recruit::after {
+  content: '';
+  background-color: #f3f3f3;
+  height: 150%;
+  width: 40%;
+  position: absolute;
+  top: -10%;
+  left: 30%;
+  transform-origin: left top;
+  transform: skewX(-30deg);
+  z-index: -1;
+}
+
+.recruit ul {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  transform: skewY(2deg);
+}
+
+.recruit ul li {
+  width: 48%;
+  position: relative;
+}
+
+.recruit ul li figure::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 43%;
+  background: rgba(50, 50, 50, 0.7);
+  z-index: 1;
+  transition: all .6s ease;
+}
+
+.recruit ul li a:hover figure::after {
+  background: rgba(50, 50, 50, 0.4);
+  transition: all .6s ease;
+}
+
+.recruit li span {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) skewY(-2deg);
+  z-index: 2;
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .recruit ul {
+    transform: none;
+  }
+
+  .recruit li span {
+    transform: translate(-50%, -50%);
+    font-size: 1.75rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .recruit ul li {
+    width: 90%;
+    margin: 0 auto 20px auto;
+  }
+}
+
+/* ======= contact ======= */
+
+.contact {
+  width: 100%;
+  height: 700px;
+  background: url(../images/contact.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+}
+
+.contact::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.contact ul {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  z-index: 1;
+  width: 100%;
+}
+
+.contact li {
+  width: 300px;
+  margin: 0 50px;
+}
+
+.contact li a {
+  border: 1px solid #fff;
+  font-size: 1.25rem;
+  color: #fff;
+  display: block;
+  text-align: center;
+  padding: 1em 0;
+}
+
+.contact li a:hover {
+  background: #fff;
+  color: #333;
+}
+
+@media screen and (max-width: 479px) {
+  .contact {
+    object-fit: contain;
+    height: 25vh;
+  }
+
+  .contact ul li a {
+    width: 30%;
+    min-width: 200px;
+    margin: 0 auto;
+    font-size: 1rem;
+  }
+}
+
+/* ======= footer ======= */
+
+.footer section {
+  padding-top: 120px;
+}
+
+.footer .high {
+  border-bottom: 1px solid #333;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.footer .high h1 {
+  font-size: 1.5rem;
+}
+
+.footer .high ul {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.footer .high li a {
+  color: #333;
+  padding: 0 25px;
+}
+
+.footer .high li a:hover {
+  opacity: 0.6;
+}
+
+.footer .low {
+  padding: 25px 0 80px 0;
+  color: #333;
+}
+
+.footer .low span {
+  padding-left: 1em;
+}
+
+.footer section p {
+  color: #333;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+@media screen and (max-width: 1199px) {
+  .footer .high {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer section {
+    padding-top: 50px;
+  }
+
+  .footer .high li {
+    width: calc(100%/3);
+    margin: 0 0 10px;
+  }
+
+  .footer .high li a {
+    display: block;
+    text-align: center;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .footer .high h1, .low {
+    text-align: center;
+  }
 }
