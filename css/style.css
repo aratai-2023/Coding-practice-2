@@ -125,7 +125,16 @@ header nav li a:hover {
   display: none; /* checkboxは非表示に */
 }
 
+#hamburger-content {
+  display: none; /* hamburgerメニューは非表示に */
+}
+
 @media screen and (max-width: 1199px) {
+  .header {
+    position: fixed; /* header固定 なくてもいいかも */
+    /* background-color: rgba(0, 0, 0, 0.3);  */
+  }
+
   /* ハンバーガーアイコンの実装 */
   .hamburger {
     display: block;
@@ -133,9 +142,10 @@ header nav li a:hover {
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
-    width: 30px;
+    width: 100vw;
     height: 26px;
     cursor: pointer;
+    text-align: right;
   }
 
   .hamburger-unshown {
@@ -156,6 +166,7 @@ header nav li a:hover {
     position: relative;
     width: 30px;
     height: 26px;
+    z-index: 100;
   }
 
   #hamburger-open span {
@@ -198,11 +209,101 @@ header nav li a:hover {
   }
 
   /* ドロワーメニューの実装 */
+  #hamburger-content {
+    display: block;
+    overflow: auto;
+    position: fixed;
+    top: -141%;
+    left: 0;
+    z-index: 30;
+    width: 101vw;
+    height: 25vh;
+    background: rgba(0, 0, 0, 0.3);
+    transition: all .5s ease-in-out;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+  }
+
+  #hamburger-content ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+  }
+
+  #hamburger-content ul li a {
+    color: #ffbf1f;
+  }
+
+  #hamburger-content ul li a:hover {
+    opacity: 0.6;
+  }
+
+  #hamburger-content ul li.phone {
+    border: 1px solid #ffbf1f;
+    color: #ffbf1f;
+    padding: 1vw;
+  }
+
+  #hamburger-content ul li i {
+    margin-right: 10px;
+  }
+
+  #hamburger-input:checked ~ #hamburger-content {
+    transform: translateY(0%);
+    box-shadow: 6px 0 24px rgba(0, 0, 0, 0.16);
+  }
+
+  /* ドロワー以外のスペースをクリックしても閉じるようにする */
+  #hamburger-close {
+    display: none;
+    position: fixed;
+    z-index: 29;
+    top: -141%;
+    left: 0;
+    width: 101%;
+    height: 100rem;
+    max-height: 1280px;
+    /* background: #000; */
+    /* background-attachment: fixed; */
+  }
+
+  #hamburger-input:checked ~ #hamburger-close {
+    display: block;
+    /* opacity: 0.3; */
+  }
 }
 
 @media screen and (max-width: 846px) {
   .header h1 {
     font-size: 5vw;
+  }
+
+  #hamburger-content {
+    /* background-color: #000; */
+    width: 103vw;
+    overflow: unset;
+  }
+
+  #hamburger-content ul {
+    font-size: 0.9rem;
+    display: inline-block;
+    margin: 1.4rem 1rem;
+    text-align: left;
+  }
+
+  #hamburger-content ul li {
+  padding: 0.1rem 0;
+  box-sizing: border-box;
+  }
+
+  #hamburger-content ul li.phone {
+    padding: 0 auto;
+    box-sizing: border-box;
+    letter-spacing: normal;
   }
 }
 
