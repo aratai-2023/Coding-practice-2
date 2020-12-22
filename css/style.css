@@ -321,6 +321,10 @@ header nav li a:hover {
   clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
 }
 
+.mainvisual .slider :nth-of-type(2) {
+  object-position: 0 10%;
+}
+
 .mainvisual h2 {
   position: absolute;
   top: 50%;
@@ -333,13 +337,17 @@ header nav li a:hover {
 
 @media screen and (max-width: 1199px) {
   .mainvisual img {
-    height: auto;
+    height: 41.6em;
   }
 }
 
 @media screen and (max-width: 600px) {
   .mainvisual h2 {
     margin-left: 1em;
+  }
+
+  .mainvisual img {
+    height: 15.7em;
   }
 }
 
