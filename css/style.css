@@ -337,6 +337,12 @@ header nav li a:hover {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .mainvisual h2 {
+    margin-left: 1em;
+  }
+}
+
 /* ======= topics ======= */
 
 .topics {

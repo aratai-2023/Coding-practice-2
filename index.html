@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0, maximum-scale=1.0">
   <title>aratai FITNESS</title>
+  <!-- bx slider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
   <!-- font awesome -->
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <header class="header">
     <h1>aratai FITNESS</h1>
@@ -43,7 +50,11 @@
   </header>
   <main>
     <article class="mainvisual">
-      <img src="images/top.jpg" alt="">
+      <div class="slider">
+        <img src="images/top.jpg" alt="">
+        <img src="images/contact.jpg" alt="">
+        <img src="images/institution.jpg" alt="">
+      </div>
       <h2>鍛える。</h2>
     </article>
     <article class="topics">
@@ -89,8 +100,12 @@
       <section class="content-wrapper">
         <h2>採用情報</h2>
         <ul>
-          <li><a href="#"><figure><img src="../images/regular_employees.jpg" alt=""></figure><span>正社員</span></a></li>
-          <li><a href="#"><figure><img src="../images/part_timer.jpg" alt=""></figure><span>アルバイト</span></a></li>
+          <li><a href="#">
+              <figure><img src="../images/regular_employees.jpg" alt=""></figure><span>正社員</span>
+            </a></li>
+          <li><a href="#">
+              <figure><img src="../images/part_timer.jpg" alt=""></figure><span>アルバイト</span>
+            </a></li>
         </ul>
       </section>
     </article>
@@ -117,5 +132,7 @@
       <p>&copy;aratai FITNESS Co.,Ltd.</p>
     </section>
   </footer>
+  <script src="js/script.js"></script>
 </body>
+
 </html>
